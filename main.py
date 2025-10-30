@@ -16,7 +16,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)-8s - 
 
 # 加密盐及其它默认值
 KEY = "3c5c8717f3daf09iop3423zafeqoi"
-COOKIE_DATA = {"rq": "%2Fweb%2Fbook%2Fread"}
+COOKIE_DATA = {"rq": "%2Fweb%2Fbook%2Fread","ql": True}
 READ_URL = "https://weread.qq.com/web/book/read"
 RENEW_URL = "https://weread.qq.com/web/login/renewal"
 FIX_SYNCKEY_URL = "https://weread.qq.com/web/book/chapterInfos"
@@ -70,6 +70,8 @@ def refresh_cookie():
 refresh_cookie()
 index = 1
 lastTime = int(time.time()) - 30
+logging.info(f"⏱️ 一共需要阅读 {READ_NUM} 次...")
+
 while index <= READ_NUM:
     data.pop('s')
     data['b'] = random.choice(book)
