@@ -1,0 +1,33 @@
+name: Workflow health maintenance
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+on:
+  schedule:
+    # 每周一北京时间 10:23 检查；运行状态记录最多每 30 天提交一次。
+    - cron: '23 2 * * 1'
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-health-maintenance
+  cancel-in-progress: false
+
+jobs:
+  record-health:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 5
+    permissions:
+      actions: write
+      contents: write
+    steps:
+      - name: Checkout maintenance script
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Check schedule and record workflow health
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: python3 .github/scripts/workflow_health.py
