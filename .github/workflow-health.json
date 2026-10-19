@@ -1,0 +1,30 @@
+{
+  "recorded_at": "2026-10-19T07:20:00.081230Z",
+  "repository": "saintshin/wxread",
+  "workflow": ".github/workflows/deploy.yml",
+  "workflow_state": "active",
+  "reactivated_after_inactivity": false,
+  "latest_run": {
+    "id": 39212946338,
+    "run_number": 618,
+    "event": "workflow_dispatch",
+    "status": "in_progress",
+    "conclusion": null,
+    "created_at": "2026-10-19T06:57:32Z",
+    "updated_at": "2026-10-19T06:57:37Z",
+    "html_url": "https://github.com/saintshin/wxread/actions/runs/39212946338",
+    "head_sha": "d22e5f62164ee8ae72ba429a3faffc219aed7323"
+  },
+  "latest_scheduled_run": {
+    "id": 37848759020,
+    "run_number": 616,
+    "event": "schedule",
+    "status": "completed",
+    "conclusion": "success",
+    "created_at": "2026-10-08T21:43:30Z",
+    "updated_at": "2026-10-08T23:47:33Z",
+    "html_url": "https://github.com/saintshin/wxread/actions/runs/37848759020",
+    "head_sha": "d22e5f62164ee8ae72ba429a3faffc219aed7323"
+  },
+  "maintenance_run_url": "https://github.com/saintshin/wxread/actions/runs/39215285914"
+}
